@@ -27,8 +27,21 @@ cacheSolve <- function(x, ...) {
         return(m)
     }
     data <- x$get()
-    m <- solve(x, ...)
+    m <- solve(data, ...)
     x$setsolve(m)
     m
     ## Return a matrix that is the inverse of 'x'
 }
+
+t <- matrix(c(1,1,1,1), nrow = 2, ncol = 2)
+print(t)
+bubba <- makeCacheMatrix()
+bubba$set(t)
+bubba$get()
+cacheSolve(bubba)
+
+# zzz <- makeCacheMatrix$set(matrix(c(2, 1, 1, -5, -3, 0, 1, 1, -1), nrow = 3, ncol = 3))
+
+# print(zzz.get())
+
+# cacheSolve(tmp)
